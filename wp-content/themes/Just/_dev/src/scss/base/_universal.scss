@@ -1,0 +1,23 @@
+*:focus-visible {
+	outline: 3px solid $primary-color;
+}
+.sr-only {
+	pointer-events: none;
+  position: absolute;
+	z-index: -999;
+  width: 1px;
+  height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+  clip-path: inset(100%);
+	opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+img {
+	object-fit: cover;
+}
+.grecaptcha-badge {
+	display: none;
+}

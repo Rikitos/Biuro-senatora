@@ -1,0 +1,81 @@
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.c-white {
+	color: $white;
+}
+.c-black {
+	color: $black;
+}
+
+.align-left {
+	text-align: left;
+}
+.align-center {
+	text-align: center;
+}
+.align-right {
+	text-align: right;
+}
+@include media('xs') {
+	.align-xs-left {
+		text-align: left;
+	}
+	.align-xs-center {
+		text-align: center;
+	}
+	.align-xs-right {
+		text-align: right;
+	}
+}
+@include media('sm') {
+	.align-sm-left {
+		text-align: left;
+	}
+	.align-sm-center {
+		text-align: center;
+	}
+	.align-sm-right {
+		text-align: right;
+	}
+}
+@include media('md') {
+	.align-md-left {
+		text-align: left;
+	}
+	.align-md-center {
+		text-align: center;
+	}
+	.align-md-right {
+		text-align: right;
+	}
+}
+@include media('lg') {
+	.align-lg-left {
+		text-align: left;
+	}
+	.align-lg-center {
+		text-align: center;
+	}
+	.align-lg-right {
+		text-align: right;
+	}
+}
+@include media('xl') {
+	.align-xl-left {
+		text-align: left;
+	}
+	.align-xl-center {
+		text-align: center;
+	}
+	.align-xl-right {
+		text-align: right;
+	}
+}
+
+@include media('sm') {
+	.hidden-sm-up {
+			display: none;
+	}
+}

@@ -37,7 +37,21 @@ if($hero) {
     <?php echo $section2['section_2_o_mnie'] ?>
   </div>
   <div class="main__about-me__heading-list">
-    <?php echo $section2['section_2_o_mnie'] ?>
+    <?php 
+      if ( have_rows('section_2')): 
+        while( have_rows('section_2') ) : the_row();
+        if ( have_rows('section_2_lista')):
+          while( have_rows('section_2_lista') ) : the_row(); ?>
+          <p>
+            <?php the_sub_field('section_2_lista_info'); ?>
+          </p> <?php
+        endwhile;
+      endif;
+
+      endwhile;
+    endif;
+
+    ?>
   </div>
   <img src="" alt="" class="main__about-me__image">
   <img src="" alt="" class="main__about-me__image">
