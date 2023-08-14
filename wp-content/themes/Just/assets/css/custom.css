@@ -1,0 +1,12 @@
+.hero {
+  background: #1F284A;
+  overflow: hidden;
+}
+
+.header__container {
+  display: flex;
+}
+
+.header__container__logo {
+  display: flex;
+}

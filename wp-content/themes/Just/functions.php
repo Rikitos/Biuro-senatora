@@ -6,10 +6,11 @@ function justidea_files() {
 	wp_enqueue_style('adobe-fonts', ('https://use.typekit.net/bto6gzh.css'));
 	wp_enqueue_style('main', get_theme_file_uri('/assets/css/main.css'));
 	wp_enqueue_style('custom', get_theme_file_uri('/assets/css/custom.css'));
-	wp_enqueue_script('app', get_theme_file_uri('/assets/js/app.js'), null, null, true);
+	wp_enqueue_script('app', get_theme_file_uri('/assets/js/app.js'));
 	wp_enqueue_script('custom', get_theme_file_uri('/assets/js/custom.js'), null, null, true);
 }
 add_action('wp_enqueue_scripts', 'justidea_files');
+
 
 function justidea_features()
 {
@@ -85,19 +86,37 @@ function my_secure_generator( $generator, $type ) {
 }
 add_filter( 'the_generator', 'my_secure_generator', 10, 2 );
 
-function my_remove_src_version( $src ) {
-  global $wp_version;
-  $version_str = '?ver='.$wp_version;
-  $offset = strlen( $src ) - strlen( $version_str );
-  if ( $offset >= 0 && strpos($src, $version_str, $offset) !== FALSE )
-    return substr( $src, 0, $offset );
-    return $src;
-  }
-add_filter( 'script_loader_src', 'my_remove_src_version' );
-add_filter( 'style_loader_src', 'my_remove_src_version' );
+// function my_remove_src_version( $src ) {
+//   global $wp_version;
+//   $version_str = '?ver='.$wp_version;
+//   $offset = strlen( $src ) - strlen( $version_str );
+//   if ( $offset >= 0 && strpos($src, $version_str, $offset) !== FALSE )
+//     return substr( $src, 0, $offset );
+//     return $src;
+//   }
+// add_filter( 'script_loader_src', 'my_remove_src_version' );
+// add_filter( 'style_loader_src', 'my_remove_src_version' );
 
 // Disable gutenberg
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
 // Remove extra P and BR from Contact Form 7
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+
+
+// <?php
+
+// function site_files() {
+//   wp_enqueue_script('main_scripts', get_theme_file_uri('/build/main.js'));
+//   wp_enqueue_style('Website_main_styles', get_theme_file_uri('/build/style.css'));
+// }
+
+// add_action('wp_enqueue_scripts', 'site_files', 999);
+
+// function custom_new_menu()
+// {
+// 	register_nav_menu('headerMainMenu', ('Header Main Menu'));
+// 	register_nav_menu('footerMainMenu', ('Footer Main Menu'));
+// }
+// add_action('init', 'custom_new_menu');

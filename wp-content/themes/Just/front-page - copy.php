@@ -17,32 +17,37 @@ if($hero) {
   </svg>
   </div>
   <div class="hero-motto">
-    <?php the_field('s1_motto') ?>
+    <?php echo $hero['hero_motto']; ?>
   </div>
   <div class="hero__info">
     <p class="hero__info-name">
-      <?php the_field('s1_name') ?>
+      <?php echo $hero['hero_name']; ?>
     </p>
     <p class="hero__info-role">
-      <?php the_field('s1_role') ?>
+      <?php echo $hero['hero_role']; ?>
     </p>
   </div>
   <div class="hero__image">
-    <img src="<?php echo esc_url(get_field('s1_portrait')['url']) ?>" alt="">
+    <img src="<?php echo esc_url($hero['hero_portrait']['url']) ?>" alt="">
   </div>
 </section>
 
 <section class="main__about-me">
   <div class="main__about-me__heading">
-    <?php the_field('s2_title') ?>
+    <?php echo $section2['section_2_o_mnie'] ?>
   </div>
   <div class="main__about-me__heading-list">
     <?php 
-      if ( have_rows('s2_list')): 
-        while( have_rows('s2_list') ) : the_row(); ?>
+      if ( have_rows('section_2')): 
+        while( have_rows('section_2') ) : the_row();
+        if ( have_rows('section_2_lista')):
+          while( have_rows('section_2_lista') ) : the_row(); ?>
           <p>
-            <?php the_sub_field('s2_list_info'); ?>
+            <?php the_sub_field('section_2_lista_info'); ?>
           </p> <?php
+        endwhile;
+      endif;
+
       endwhile;
     endif;
 
@@ -52,45 +57,8 @@ if($hero) {
   <img src="" alt="" class="main__about-me__image">
 </section class="main__success">
 
-<section class="main__achievements">
-    <h1 class="main__achievements-title">
-      <?php the_field('s3_title') ?>
-    </h1>
-    <div class="main__achievements-container">
-      <?php
-        if(have_rows('s3_list')):
-          while(have_rows('s3_list')) : the_row(); ?>
-          <p>
-            <?php the_sub_field('s3_list_success'); ?>
-          </p> <?php
-          endwhile;
-        endif; ?>
-
-    </div>
+<section>
+    
 </section>
-
-<section class="main__gallery">
-  <?php 
-  $images = get_field('s4_gallery');
-  $size = 'thumbnail';
-  if ($images): ?>
-    <ul>
-      <?php foreach($images as $image) : ?>
-        <li>
-          <a href="<?php echo esc_url($image['url']); ?>">
-            <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-          </a>
-        </li>
-        <?php endforeach; ?>
-    </ul>
-  <?php endif; ?>
-</section>
-
-<section class="main_form">
-  <?php $form = get_field('s5_form'); ?>
-</section>
-<div>
-  <?php echo apply_shortcodes($form); ?>
-</div>
 
 <?php get_footer(); ?>
