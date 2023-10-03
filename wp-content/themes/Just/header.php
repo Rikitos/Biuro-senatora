@@ -33,30 +33,45 @@
       </div>
 
       <div class="header__container__navigation header__navigation">
-        <nav class="header__navigation__container">
+        <!-- <nav class="header__navigation__container"> -->
+          <ul class="header__navigation__container-list">
+            <li>
+              <a href="#about-me">O mnie</a>
+            </li>
+            <li>
+              <a href="#achievements">Sukcesy</a>
+            </li>
+            <li>
+              <a href="#gallery">Galeria</a>
+            </li>
+            <li>
+              <a href="#contact">Kontakt</a>
+            </li>
+          </ul>
           <?php
-          wp_nav_menu(
-            array(
-              'theme_location' => 'headerMainMenu',
-            )
-          );
+          // wp_nav_menu(
+          //   array(
+          //     'theme_location' => 'headerMainMenu',
+          //     'container_class' => 'header__navigation__container',
+          //     'menu_class' => 'header__navigation__container-list'
+          //   )
+          // );
           ?>
-        </nav>
+        <!-- </nav> -->
       </div>
 
       <div class="header__container__socials">
-          <i>fb</i>
-          <i>twitter</i>
-          <i>instagram</i>
-          <i>tik</i>
-          <i>fb</i>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
       </div>
+    </div>
 
-      <div class="header__hamburger"> 
+    <div class="header__hamburger"> 
         <div class="hamburger header__hamburger-one"></div>
         <div class="hamburger header__hamburger-two"></div>
         <div class="hamburger header__hamburger-three"></div>
-      </div>
     </div>
-  
   </header>

@@ -1,0 +1,114 @@
+.main__about-me {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 25px;
+  &__container {
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    @include media('md') {
+      width: fit-content;
+      padding-left: 70px;
+    }
+  }
+  &__heading {
+    color: #2D3456;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 33.6px */
+    margin: 35px 25px 25px 25px;
+    max-width: 900px;
+    @include media('md') {
+      margin-top: 80px;
+      margin-bottom: 50px;
+      font-size: 3rem;
+    }
+    @include media('lg') {
+      margin-top: 100px;
+      margin-bottom: 40px;
+      font-size: 4rem;
+    }
+    &-list {
+      margin: 0 25px 0 45px;
+      padding-left: 0;
+      list-style-type: disc;
+      max-width: 900px;
+      width: 85%;
+      @include media('md') {
+        margin-bottom: 100px;
+        width: 100%;
+      }
+      @include media('lg') {
+        margin-bottom: 200px;
+      }
+      &>li {
+        color: #1F284A;
+        font-family: 'Proxima Nova', sans-serif;
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        @include media('md') {
+          font-size: 2rem;
+          margin-bottom: 8px;
+        }
+        @include media('lg') {
+          font-size: 2.2rem;
+          margin-bottom: 10px;
+        }
+        @include media('xl') {
+          font-size: 2.6rem;
+          line-height: 4rem;
+        }
+      }
+    }
+  }
+  &__image {
+    opacity: 0.1;
+    &-left {
+      height: 470px;
+      transform: translateX(-50%);
+      position: absolute;
+      // opacity: 0.1;
+      bottom: 0;
+      @include media('md') {
+        height: 550px;
+        opacity: 0.4;
+      }
+      @include media('lg') {
+        height: 750px;
+        opacity: 0.8;
+      }
+      @include media('xl') {
+        height: 850px;
+        opacity: 1;
+        transform: translateX(-25%);
+      }
+    }
+    &-right {
+      height: 470px;
+      position: absolute;
+      transform: translateX(50%);
+      // opacity: 0.1;
+      bottom: 0;
+      right: 0;
+      @include media('md') {
+        height: 550px;
+        opacity: 0.4;
+      }
+      @include media('lg') {
+        height: 750px;
+        opacity: 0.8;
+      }
+      @include media('xl') {
+        height: 850px;
+        opacity: 1;
+        transform: translateX(25%);
+      }
+    }
+  }
+}

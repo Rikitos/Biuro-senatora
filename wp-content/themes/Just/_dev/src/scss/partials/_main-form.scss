@@ -1,0 +1,123 @@
+.main__form {
+  padding: 0 25px;
+  @include media('sm') {
+    padding: 0 45px;
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 50px auto 0;
+    gap: 25px;
+    justify-content: center;
+    &__desc {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 0 50px;
+      color: #11172F;
+      font-family: 'Proxima Nova', sans-serif;
+      flex-basis: 100%;
+      @include media('sm') {
+        flex-basis: unset;
+        flex-direction: column;
+      }
+      &-title {
+        flex-basis: 80%;
+        flex-grow: 1;
+        margin-bottom: 15px;
+        font-size: 24px;
+        @include media('sm') {
+          flex-basis: auto;
+          flex-grow: 0;
+        }
+      }
+      &-text {
+        flex-basis: 80%;
+        flex-grow: 1;
+        margin-bottom: 15px;
+        font-size: 30px;
+        line-height: 120%; /* 36px */
+        @include media('sm') {
+          flex-basis: auto;
+          flex-grow: 0;
+        }
+        &--one {
+          display: block;
+        }
+      }
+      &-address {
+        flex-basis: 80%;
+        flex-grow: 1;
+        font-size: 24px;
+        @include media('sm') {
+          flex-basis: auto;
+          flex-grow: 0;
+        }
+      }
+    }
+    &-form {
+      flex-basis: 100%;
+      @include media('sm') {
+        flex-basis: calc(50% - 12.5px);
+      }
+    }
+    & .wpcf7 {
+      &-form {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-content: center;
+        gap: 25px;
+        &-control {
+          width: 100%;
+          padding: 15px 10px;
+          height: 49px;
+          border-radius: 8px;
+          font-size: 16px;
+          border: 1px solid #11172F;
+          // background-color: rgb(216, 216, 216);
+          &::placeholder {
+            color: #11172F;
+          }
+          &-wrap {
+            flex-basis: 90%;
+            flex-grow: 1;
+            border-radius: 15px;
+          }
+        }
+      }
+      &-textarea {
+        height: 194px;
+        resize: vertical;
+        max-height: 500px;
+      }
+      &-submit {
+        width: 151px;
+        flex-shrink: 0;
+        color: #fff;
+        background-color: #FF285C;
+        border-radius: 0;
+        border: none;
+        transition: 0.4s linear;
+        margin-top: 10px;
+        &:hover {
+          background-color: #587289;
+        }
+      }
+      &-acceptance {
+        border: 0;
+        padding-left: 0;
+        & .wpcf7-list-item {
+          margin-left: 0;
+          &>label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+          }
+        }
+      }
+    }
+  }
+}

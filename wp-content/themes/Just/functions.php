@@ -3,7 +3,9 @@
 function justidea_files() {
   wp_enqueue_script('jquery');
 	wp_enqueue_script('lottie', ('https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'), null, null, true);
+	wp_enqueue_script('font-awesome', ('https://kit.fontawesome.com/574fabade3.js'));
 	wp_enqueue_style('adobe-fonts', ('https://use.typekit.net/bto6gzh.css'));
+	wp_enqueue_style('proxima-nova', ('https://use.typekit.net/ytm8xjs.css'));
 	wp_enqueue_style('main', get_theme_file_uri('/assets/css/main.css'));
 	wp_enqueue_style('custom', get_theme_file_uri('/assets/css/custom.css'));
 	wp_enqueue_script('app', get_theme_file_uri('/assets/js/app.js'));

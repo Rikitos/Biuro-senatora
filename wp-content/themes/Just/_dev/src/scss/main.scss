@@ -1,15 +1,19 @@
 @import 'utilities/variables';
 @import 'utilities/mixins';
 
-@import 'base/normalize';
-@import 'base/layout';
-@import 'base/layout-mod';
-@import 'base/universal';
+// @import 'base/normalize';
+// @import 'base/layout';
+// @import 'base/layout-mod';
+// @import 'base/universal';
 
 @import 'partials/website';
 @import 'partials/header';
 @import 'partials/content';
 @import 'partials/footer';
+@import 'partials/about-me';
+@import 'partials/main-achievements';
+@import 'partials/main-gallery';
+@import 'partials/main-form';
 
 @import 'hero';
 
